@@ -2,7 +2,7 @@ import { DarkModeContext } from '../../contexts/DarkModeProvider';
 import { useContext } from 'react';
 import './search-box.css';
 
-const SearchBox = ({ query, handleChange, handleSubmit }) => {
+const SearchBox = ({ query, handleChange, handleSubmit, Group, Level }) => {
   const theme = useContext(DarkModeContext);
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
 
@@ -18,6 +18,18 @@ const SearchBox = ({ query, handleChange, handleSubmit }) => {
             style={{ background: bg, color: syntax }}
             placeholder="Search Game by Topic"
           />
+          <div className="">
+            <label htmlFor="filter"></label>
+            <select
+              name="filter"
+              id="filter"
+              style={{ background: bg, color: syntax }}
+              onSelect={console.log('selected')}
+            >
+              <option value={Group}>group</option>
+              <option value={Level}>level</option>
+            </select>
+          </div>
         </form>
       </div>
     </div>

@@ -5,6 +5,7 @@ import GAME_DATA from '../components/game.data';
 import GamePreview from '../components/game-preview/gamepreview.component';
 import ThemeToggle from '../components/theme-toggle/ThemeToggle';
 import { DarkModeContext } from '../contexts/DarkModeProvider';
+import { v4 as uuidv4 } from 'uuid';
 
 const Home = () => {
   const [query, setQuery] = useState('');
@@ -43,11 +44,16 @@ const Home = () => {
           9ijakids Kids Game
         </h1>
 
-        <SearchBox query={query} handleChange={handleChange} />
+        <SearchBox
+          query={query}
+          handleChange={handleChange}
+          Group={filteredGames.Group}
+          Level={filteredGames.Level}
+        />
 
         <div id="meals" className="meals">
           {filteredGames.map((game) => (
-            <GamePreview game={game} />
+            <GamePreview game={game} key={uuidv4()} />
           ))}
         </div>
       </div>

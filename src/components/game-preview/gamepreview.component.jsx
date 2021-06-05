@@ -2,6 +2,7 @@ import { DarkModeContext } from '../../contexts/DarkModeProvider';
 import { useContext } from 'react';
 import React, { PureComponent } from 'react';
 import './game-preview.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const GamePreview = ({ game }) => {
   const theme = useContext(DarkModeContext);
@@ -9,7 +10,7 @@ const GamePreview = ({ game }) => {
   return (
     <div
       className="meal hover:shadow-lg"
-      key={game.GameTitle}
+      key={uuidv4()}
       style={{ background: bg, color: syntax }}
     >
       <img
