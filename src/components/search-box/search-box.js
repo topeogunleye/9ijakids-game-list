@@ -1,10 +1,20 @@
 import { DarkModeContext } from '../../contexts/DarkModeProvider';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import './search-box.css';
+import MenuSelect from '../menuselect';
 
-const SearchBox = ({ query, handleChange, handleSubmit, Group, Level }) => {
+const SearchBox = ({
+  query,
+  handleChange,
+  handleSubmit,
+  Group,
+  Level,
+  handleSelect,
+}) => {
   const theme = useContext(DarkModeContext);
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
+
+  const [GameLabel, setGameLabel] = useState('');
 
   return (
     <div className="flex flex-col items-center sm:flex-row">
@@ -18,22 +28,29 @@ const SearchBox = ({ query, handleChange, handleSubmit, Group, Level }) => {
             style={{ background: bg, color: syntax }}
             placeholder="Search Game by Topic"
           />
-          <div className="">
-            <label htmlFor="filter"></label>
-            <select
-              name="filter"
-              id="filter"
-              style={{ background: bg, color: syntax }}
-              onSelect={console.log('selected')}
-            >
-              <option value={Group}>group</option>
-              <option value={Level}>level</option>
-            </select>
-          </div>
         </form>
+        <MenuSelect />
       </div>
     </div>
   );
 };
 
 export default SearchBox;
+
+// <select className="game_labels ml-2">
+//           <option onClick={() => setGameLabel('Academic')}>Academic</option>
+//           <option onClick={() => setGameLabel('Finacial Literacy')}>
+//             Finacial Literacy
+//           </option>
+//         </select>
+
+// <label htmlFor="filter"></label>
+// <select
+// name="filter"
+// id="filter"
+// style={{ background: bg, color: syntax }}
+// onSelect={handleSelect}
+// >
+// <option value={Group}>group</option>
+// <option value={Level}>level</option>
+// </select>

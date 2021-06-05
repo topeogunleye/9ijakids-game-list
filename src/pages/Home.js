@@ -11,13 +11,29 @@ const Home = () => {
   const [query, setQuery] = useState('');
 
   const [games, setGames] = useState(GAME_DATA);
+  const [GameGroup, setGameGroup] = useState('');
+  const [GameLevel, setGameLevel] = useState('');
 
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const filteredGames = games.filter((game) =>
+  const handleSelect = (event) => {
+    console.log(event.target.value);
+  };
+
+  let filteredGames = games.filter((game) =>
     game.Topic.toLowerCase().includes(query.toLowerCase())
+  );
+
+  if (GameGroup === 'Academic') {
+    let filteredGames = games.filter((game) =>
+      game.Group.toLowerCase().includes(GameGroup.toLowerCase())
+    );
+  }
+
+  const filterLevel = games.filter((game) =>
+    game.Group.toLowerCase().includes(GameLevel.toLowerCase())
   );
 
   const theme = useContext(DarkModeContext);
@@ -29,7 +45,7 @@ const Home = () => {
       className="bg-gray-500 text-white min-h-screen flex flex-col items-center justify-center text-center mb-8"
       style={{ background: ui, color: syntax }}
     >
-      <div className="m-auto max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center justify-center text-center mb-8">
+      <div className="max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center justify-center text-center mb-8">
         <div
           className="absolute top-5 right-10
           "
@@ -47,6 +63,7 @@ const Home = () => {
         <SearchBox
           query={query}
           handleChange={handleChange}
+          handleSelect={handleSelect}
           Group={filteredGames.Group}
           Level={filteredGames.Level}
         />
@@ -60,5 +77,23 @@ const Home = () => {
     </div>
   );
 };
+
+// <div className="">
+// <select className="game_labels ml-2">
+//   <option onClick={() => setGameGroup('Academic')}>Academic</option>
+//   <option onClick={() => setGameLevel('Finacial Literacy')}>
+//     Finacial Literacy
+//   </option>
+// </select>
+// </div>
+
+// <h1>Filter By Group</h1>
+// {filterGroup.map((game) => (
+//   <GamePreview game={game} key={uuidv4()} />
+// ))}
+// <h1>Filter By Level</h1>
+// {filterLevel.map((game) => (
+//   <GamePreview game={game} key={uuidv4()} />
+// ))}
 
 export default Home;
