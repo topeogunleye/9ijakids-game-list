@@ -14,7 +14,7 @@ const SearchBox = ({ query, handleChange, handleSubmit }) => {
             type="text"
             value={query}
             onChange={handleChange}
-            className="border rounded-l sm:w-full text-black"
+            className="border rounded sm:w-full text-black"
             style={{ background: bg, color: syntax }}
             placeholder="Search Game by Topic"
           />
