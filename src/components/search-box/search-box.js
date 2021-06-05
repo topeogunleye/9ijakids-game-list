@@ -1,6 +1,5 @@
 import { DarkModeContext } from '../../contexts/DarkModeProvider';
 import { useContext } from 'react';
-import * as FaIcons from 'react-icons/fa';
 import './search-box.css';
 
 const SearchBox = ({ query, handleChange, handleSubmit }) => {
@@ -19,14 +18,6 @@ const SearchBox = ({ query, handleChange, handleSubmit }) => {
             style={{ background: bg, color: syntax }}
             placeholder="Search Game by Topic"
           />
-
-          <button
-            className="search-btn border rounded-r"
-            type="submit"
-            style={{ background: bg, color: syntax }}
-          >
-            <FaIcons.FaSearch className="h-5 w-5" />
-          </button>
         </form>
       </div>
     </div>
