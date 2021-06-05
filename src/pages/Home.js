@@ -39,7 +39,9 @@ const Home = () => {
           />
         </div>
 
-        <h1 className="font-black text-2xl logo-signature">Recipa</h1>
+        <h1 className="font-black text-2xl logo-signature">
+          9ijakids Kids Game
+        </h1>
 
         <SearchBox query={query} handleChange={handleChange} />
 
