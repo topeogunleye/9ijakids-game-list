@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 // import { DarkModeContext } from '../contexts/DarkModeProvider';
 import SearchBox from '../components/search-box/search-box';
 import GAME_DATA from '../components/game.data';
@@ -11,9 +11,6 @@ const Home = () => {
   const [query, setQuery] = useState('');
 
   const [games, setGames] = useState(GAME_DATA);
-
-  const Academic = 'Academic';
-  const FinancialLiteracy = 'Financial Literacy';
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -32,6 +29,7 @@ const Home = () => {
     filteredGames = games.filter((game) =>
       game.Group.toLowerCase().includes('academic')
     );
+    console.log(filteredGames);
   };
 
   const handleFinLit = () => {
@@ -39,11 +37,27 @@ const Home = () => {
     filteredGames = games.filter((game) =>
       game.Group.toLowerCase().includes('financial literacy')
     );
+    console.log(filteredGames);
+  };
+
+  const handleKeyStage1 = () => {
+    console.log('KeyStage1');
+    filteredGames = games.filter((game) =>
+      game.Level.toLowerCase().includes('key stage 1')
+    );
+    console.log(filteredGames);
+  };
+
+  const handleKeyStage2 = () => {
+    console.log('KeyStage2');
+    filteredGames = games.filter((game) =>
+      game.Level.toLowerCase().includes('key stage 2')
+    );
+    console.log(filteredGames);
   };
 
   const theme = useContext(DarkModeContext);
-  const { syntax, ui, bg, opacity, isDark } = theme.mode;
-  const loaderTheme = isDark ? 'dark' : 'light';
+  const { syntax, ui } = theme.mode;
 
   return (
     <div
@@ -73,6 +87,8 @@ const Home = () => {
           Level={filteredGames.Level}
           handleAcademic={handleAcademic}
           handleFinLit={handleFinLit}
+          handleKeyStage1={handleKeyStage1}
+          handleKeyStage2={handleKeyStage2}
         />
 
         <div id="meals" className="meals">

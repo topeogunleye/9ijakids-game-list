@@ -13,6 +13,8 @@ const SearchBox = ({
   handleSelect,
   handleAcademic,
   handleFinLit,
+  handleKeyStage1,
+  handleKeyStage2,
 }) => {
   const theme = useContext(DarkModeContext);
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
@@ -34,7 +36,10 @@ const SearchBox = ({
           handleAcademic={handleAcademic}
           handleFinLit={handleFinLit}
         />
-        <LevelSelect />
+        <LevelSelect
+          handleKeyStage1={handleKeyStage1}
+          handleKeyStage1={handleKeyStage2}
+        />
       </div>
     </div>
   );

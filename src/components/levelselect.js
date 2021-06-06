@@ -7,7 +7,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function LevelSelect({ handleAcademic, handleFinLit }) {
+export default function LevelSelect({ handleKeyStage1, handleKeyStage2 }) {
   return (
     <Menu as="div" className="relative inline-block text-left ml-2 z-10">
       {({ open }) => (
@@ -37,7 +37,7 @@ export default function LevelSelect({ handleAcademic, handleFinLit }) {
               className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
             >
               <div className="py-1">
-                <Menu.Item onClick={handleAcademic}>
+                <Menu.Item onClick={handleKeyStage1}>
                   {({ active }) => (
                     <a
                       href="#"
@@ -50,7 +50,7 @@ export default function LevelSelect({ handleAcademic, handleFinLit }) {
                     </a>
                   )}
                 </Menu.Item>
-                <Menu.Item onClick={handleFinLit}>
+                <Menu.Item onClick={handleKeyStage2}>
                   {({ active }) => (
                     <a
                       href="#"
