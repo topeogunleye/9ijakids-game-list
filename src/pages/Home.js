@@ -78,7 +78,7 @@ const Home = () => {
     >
       <div className="max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center justify-center text-center mb-8">
         <div
-          className="absolute top-5 right-10
+          className="absolute top-5 right-1 sm:right-5 lg:right-10
           "
         >
           <ThemeToggle
