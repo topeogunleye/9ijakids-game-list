@@ -19,7 +19,7 @@ const SearchBox = ({
 
   return (
     <div className="flex flex-col items-center sm:flex-row">
-      <div className="flex mt-2">
+      <div className="flex-col mt-2 sm:flex-row">
         <form className="flex">
           <input
             type="text"
@@ -30,15 +30,17 @@ const SearchBox = ({
             placeholder="Search Game by Topic"
           />
         </form>
-        <MenuSelect
-          handleAcademic={handleAcademic}
-          handleFinLit={handleFinLit}
-        />
-        <LevelSelect
-          handleKeyStage1={handleKeyStage1}
-          handleKeyStage2={handleKeyStage2}
-          handleFinLevel={handleFinLevel}
-        />
+        <div className="">
+          <MenuSelect
+            handleAcademic={handleAcademic}
+            handleFinLit={handleFinLit}
+          />
+          <LevelSelect
+            handleKeyStage1={handleKeyStage1}
+            handleKeyStage2={handleKeyStage2}
+            handleFinLevel={handleFinLevel}
+          />
+        </div>
       </div>
     </div>
   );
