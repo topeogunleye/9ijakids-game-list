@@ -1,7 +1,8 @@
 import { DarkModeContext } from '../../contexts/DarkModeProvider';
 import { useContext, useState } from 'react';
 import './search-box.css';
-import MenuSelect from '../menuselect';
+import MenuSelect from '../groupselect';
+import LevelSelect from '../levelselect';
 
 const SearchBox = ({
   query,
@@ -10,11 +11,11 @@ const SearchBox = ({
   Group,
   Level,
   handleSelect,
+  handleAcademic,
+  handleFinLit,
 }) => {
   const theme = useContext(DarkModeContext);
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
-
-  const [GameLabel, setGameLabel] = useState('');
 
   return (
     <div className="flex flex-col items-center sm:flex-row">
@@ -29,7 +30,11 @@ const SearchBox = ({
             placeholder="Search Game by Topic"
           />
         </form>
-        <MenuSelect />
+        <MenuSelect
+          handleAcademic={handleAcademic}
+          handleFinLit={handleFinLit}
+        />
+        <LevelSelect />
       </div>
     </div>
   );

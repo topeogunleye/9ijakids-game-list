@@ -11,8 +11,9 @@ const Home = () => {
   const [query, setQuery] = useState('');
 
   const [games, setGames] = useState(GAME_DATA);
-  const [GameGroup, setGameGroup] = useState('');
-  const [GameLevel, setGameLevel] = useState('');
+
+  const Academic = 'Academic';
+  const FinancialLiteracy = 'Financial Literacy';
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -21,20 +22,24 @@ const Home = () => {
   const handleSelect = (event) => {
     console.log(event.target.value);
   };
-
-  let filteredGames = games.filter((game) =>
+  let filteredGames;
+  filteredGames = games.filter((game) =>
     game.Topic.toLowerCase().includes(query.toLowerCase())
   );
 
-  if (GameGroup === 'Academic') {
-    let filteredGames = games.filter((game) =>
-      game.Group.toLowerCase().includes(GameGroup.toLowerCase())
+  const handleAcademic = () => {
+    console.log('Academic');
+    filteredGames = games.filter((game) =>
+      game.Group.toLowerCase().includes('academic')
     );
-  }
+  };
 
-  const filterLevel = games.filter((game) =>
-    game.Group.toLowerCase().includes(GameLevel.toLowerCase())
-  );
+  const handleFinLit = () => {
+    console.log('FinLit');
+    filteredGames = games.filter((game) =>
+      game.Group.toLowerCase().includes('financial literacy')
+    );
+  };
 
   const theme = useContext(DarkModeContext);
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
@@ -66,6 +71,8 @@ const Home = () => {
           handleSelect={handleSelect}
           Group={filteredGames.Group}
           Level={filteredGames.Level}
+          handleAcademic={handleAcademic}
+          handleFinLit={handleFinLit}
         />
 
         <div id="meals" className="meals">
