@@ -9,7 +9,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function LevelSelect({ handleKeyStage1, handleKeyStage2 }) {
+export default function LevelSelect({
+  handleKeyStage1,
+  handleKeyStage2,
+  handleFinLevel,
+}) {
   const theme = useContext(DarkModeContext);
   const { syntax, bg } = theme.mode;
 
@@ -66,6 +70,18 @@ export default function LevelSelect({ handleKeyStage1, handleKeyStage2 }) {
                       )}
                     >
                       Key Stage 2
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item onClick={handleFinLevel}>
+                  {({ active }) => (
+                    <button
+                      className={classNames(
+                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        'block px-4 py-2 text-sm'
+                      )}
+                    >
+                      Financial Literacy
                     </button>
                   )}
                 </Menu.Item>

@@ -10,6 +10,7 @@ const SearchBox = ({
   handleChange,
   handleAcademic,
   handleFinLit,
+  handleFinLevel,
   handleKeyStage1,
   handleKeyStage2,
 }) => {
@@ -36,6 +37,7 @@ const SearchBox = ({
         <LevelSelect
           handleKeyStage1={handleKeyStage1}
           handleKeyStage2={handleKeyStage2}
+          handleFinLevel={handleFinLevel}
         />
       </div>
     </div>

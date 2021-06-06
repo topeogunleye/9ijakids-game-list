@@ -42,6 +42,16 @@ const Home = () => {
     console.log(filteredGames);
   };
 
+  const handleFinLevel = () => {
+    console.log('FinLev');
+    setFilteredGames(
+      games.filter((game) =>
+        game.Level.toLowerCase().includes('financial literacy')
+      )
+    );
+    console.log(filteredGames);
+  };
+
   const handleKeyStage1 = () => {
     console.log('KeyStage1');
     setFilteredGames(
@@ -88,6 +98,7 @@ const Home = () => {
           Level={filteredGames.Level}
           handleAcademic={handleAcademic}
           handleFinLit={handleFinLit}
+          handleFinLevel={handleFinLevel}
           handleKeyStage1={handleKeyStage1}
           handleKeyStage2={handleKeyStage2}
         />
