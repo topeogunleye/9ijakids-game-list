@@ -18,7 +18,7 @@ const SearchBox = ({
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
 
   return (
-    <div className="flex flex-col items-center sm:flex-row">
+    <div className="flex flex-row items-center">
       <div className="flex-col mt-2 sm:flex-row">
         <form className="flex">
           <input
@@ -30,7 +30,7 @@ const SearchBox = ({
             placeholder="Search Game by Topic"
           />
         </form>
-        <div className="">
+        <div className="mt-2">
           <MenuSelect
             handleAcademic={handleAcademic}
             handleFinLit={handleFinLit}
