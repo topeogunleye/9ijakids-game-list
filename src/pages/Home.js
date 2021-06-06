@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 // import { DarkModeContext } from '../contexts/DarkModeProvider';
 import SearchBox from '../components/search-box/search-box';
 import GAME_DATA from '../components/game.data';
@@ -11,6 +11,7 @@ const Home = () => {
   const [query, setQuery] = useState('');
 
   const [games, setGames] = useState(GAME_DATA);
+  const [filteredGames, setFilteredGames] = useState([]);
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -19,40 +20,52 @@ const Home = () => {
   const handleSelect = (event) => {
     console.log(event.target.value);
   };
-  let filteredGames;
-  filteredGames = games.filter((game) =>
-    game.Topic.toLowerCase().includes(query.toLowerCase())
-  );
+
+  useEffect(() => {
+    setFilteredGames(
+      games.filter((game) =>
+        game.Topic.toLowerCase().includes(query.toLowerCase())
+      )
+    );
+  }, [games, query]);
+
+  // setDisplayGames(filteredGames);
 
   const handleAcademic = () => {
     console.log('Academic');
-    filteredGames = games.filter((game) =>
-      game.Group.toLowerCase().includes('academic')
+    setFilteredGames(
+      games.filter((game) => game.Group.toLowerCase().includes('academic'))
     );
+    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
   const handleFinLit = () => {
     console.log('FinLit');
-    filteredGames = games.filter((game) =>
-      game.Group.toLowerCase().includes('financial literacy')
+    setFilteredGames(
+      games.filter((game) =>
+        game.Group.toLowerCase().includes('financial literacy')
+      )
     );
+    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
   const handleKeyStage1 = () => {
     console.log('KeyStage1');
-    filteredGames = games.filter((game) =>
-      game.Level.toLowerCase().includes('key stage 1')
+    setFilteredGames(
+      games.filter((game) => game.Level.toLowerCase().includes('key stage 1'))
     );
+    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
   const handleKeyStage2 = () => {
     console.log('KeyStage2');
-    filteredGames = games.filter((game) =>
-      game.Level.toLowerCase().includes('key stage 2')
+    setFilteredGames(
+      games.filter((game) => game.Level.toLowerCase().includes('key stage 2'))
     );
+    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
@@ -82,7 +95,6 @@ const Home = () => {
         <SearchBox
           query={query}
           handleChange={handleChange}
-          handleSelect={handleSelect}
           Group={filteredGames.Group}
           Level={filteredGames.Level}
           handleAcademic={handleAcademic}
