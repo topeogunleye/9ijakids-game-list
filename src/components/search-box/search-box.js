@@ -28,13 +28,6 @@ const SearchBox = ({
             style={{ background: bg, color: syntax }}
             placeholder="Search Game by Topic"
           />
-          <button
-            className="search-btn border rounded-r"
-            type="submit"
-            style={{ background: bg, color: syntax }}
-          >
-            <FaIcons.FaSearch className="h-5 w-5" />
-          </button>
         </form>
         <MenuSelect
           handleAcademic={handleAcademic}
@@ -42,7 +35,7 @@ const SearchBox = ({
         />
         <LevelSelect
           handleKeyStage1={handleKeyStage1}
-          handleKeyStage1={handleKeyStage2}
+          handleKeyStage2={handleKeyStage2}
         />
       </div>
     </div>

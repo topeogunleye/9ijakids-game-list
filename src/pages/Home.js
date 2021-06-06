@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react';
-// import { DarkModeContext } from '../contexts/DarkModeProvider';
 import SearchBox from '../components/search-box/search-box';
 import GAME_DATA from '../components/game.data';
 import GamePreview from '../components/game-preview/gamepreview.component';
@@ -17,10 +16,6 @@ const Home = () => {
     setQuery(event.target.value);
   };
 
-  const handleSelect = (event) => {
-    console.log(event.target.value);
-  };
-
   useEffect(() => {
     setFilteredGames(
       games.filter((game) =>
@@ -29,14 +24,11 @@ const Home = () => {
     );
   }, [games, query]);
 
-  // setDisplayGames(filteredGames);
-
   const handleAcademic = () => {
     console.log('Academic');
     setFilteredGames(
       games.filter((game) => game.Group.toLowerCase().includes('academic'))
     );
-    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
@@ -47,7 +39,6 @@ const Home = () => {
         game.Group.toLowerCase().includes('financial literacy')
       )
     );
-    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
@@ -56,7 +47,6 @@ const Home = () => {
     setFilteredGames(
       games.filter((game) => game.Level.toLowerCase().includes('key stage 1'))
     );
-    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
@@ -65,7 +55,6 @@ const Home = () => {
     setFilteredGames(
       games.filter((game) => game.Level.toLowerCase().includes('key stage 2'))
     );
-    // setDisplayGames(filteredGames);
     console.log(filteredGames);
   };
 
@@ -112,23 +101,5 @@ const Home = () => {
     </div>
   );
 };
-
-// <div className="">
-// <select className="game_labels ml-2">
-//   <option onClick={() => setGameGroup('Academic')}>Academic</option>
-//   <option onClick={() => setGameLevel('Finacial Literacy')}>
-//     Finacial Literacy
-//   </option>
-// </select>
-// </div>
-
-// <h1>Filter By Group</h1>
-// {filterGroup.map((game) => (
-//   <GamePreview game={game} key={uuidv4()} />
-// ))}
-// <h1>Filter By Level</h1>
-// {filterLevel.map((game) => (
-//   <GamePreview game={game} key={uuidv4()} />
-// ))}
 
 export default Home;

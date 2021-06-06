@@ -2,18 +2,26 @@
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import { DarkModeContext } from '../contexts/DarkModeProvider';
+import { useContext } from 'react';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function LevelSelect({ handleKeyStage1, handleKeyStage2 }) {
+  const theme = useContext(DarkModeContext);
+  const { syntax, bg } = theme.mode;
+
   return (
     <Menu as="div" className="relative inline-block text-left ml-2 z-10">
       {({ open }) => (
         <>
           <div>
-            <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+            <Menu.Button
+              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+              style={{ background: bg, color: syntax }}
+            >
               Level
               <ChevronDownIcon
                 className="-mr-1 ml-2 h-5 w-5"
