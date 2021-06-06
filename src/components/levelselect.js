@@ -47,28 +47,26 @@ export default function LevelSelect({ handleKeyStage1, handleKeyStage2 }) {
               <div className="py-1">
                 <Menu.Item onClick={handleKeyStage1}>
                   {({ active }) => (
-                    <a
-                      href="#"
+                    <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >
                       Key Stage 1
-                    </a>
+                    </button>
                   )}
                 </Menu.Item>
                 <Menu.Item onClick={handleKeyStage2}>
                   {({ active }) => (
-                    <a
-                      href="#"
+                    <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >
                       Key Stage 2
-                    </a>
+                    </button>
                   )}
                 </Menu.Item>
               </div>

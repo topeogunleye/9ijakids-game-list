@@ -47,28 +47,26 @@ export default function GroupSelect({ handleAcademic, handleFinLit }) {
               <div className="py-1">
                 <Menu.Item onClick={handleAcademic}>
                   {({ active }) => (
-                    <a
-                      href="#"
+                    <buttoon
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >
                       Academic
-                    </a>
+                    </buttoon>
                   )}
                 </Menu.Item>
                 <Menu.Item onClick={handleFinLit}>
                   {({ active }) => (
-                    <a
-                      href="#"
+                    <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-4 py-2 text-sm'
                       )}
                     >
                       Financial Literacy
-                    </a>
+                    </button>
                   )}
                 </Menu.Item>
               </div>
