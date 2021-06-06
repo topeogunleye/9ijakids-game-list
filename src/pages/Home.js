@@ -18,7 +18,7 @@ const Home = () => {
 
   const refresh = () => {
     // it re-renders the component
-    setGames(GAME_DATA);
+    setFilteredGames(GAME_DATA);
   };
 
   useEffect(() => {
