@@ -16,6 +16,11 @@ const Home = () => {
     setQuery(event.target.value);
   };
 
+  const refresh = () => {
+    // it re-renders the component
+    setGames(GAME_DATA);
+  };
+
   useEffect(() => {
     setFilteredGames(
       games.filter((game) =>
@@ -76,7 +81,7 @@ const Home = () => {
       className="bg-gray-500 text-white min-h-screen flex flex-col items-center justify-center text-center mb-8"
       style={{ background: ui, color: syntax }}
     >
-      <div className="max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center justify-center text-center mb-8">
+      <div className="max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center justify-center text-center mb-8 min-h-screen">
         <div
           className="absolute top-5 right-1 sm:right-5 lg:right-10
           "
@@ -101,6 +106,7 @@ const Home = () => {
           handleFinLevel={handleFinLevel}
           handleKeyStage1={handleKeyStage1}
           handleKeyStage2={handleKeyStage2}
+          refresh={refresh}
         />
 
         <div id="meals" className="meals">

@@ -4,6 +4,7 @@ import './search-box.css';
 import MenuSelect from '../groupselect';
 import LevelSelect from '../levelselect';
 import * as FaIcons from 'react-icons/fa';
+import * as HiIcons from 'react-icons/hi';
 
 const SearchBox = ({
   query,
@@ -13,6 +14,7 @@ const SearchBox = ({
   handleFinLevel,
   handleKeyStage1,
   handleKeyStage2,
+  refresh,
 }) => {
   const theme = useContext(DarkModeContext);
   const { syntax, ui, bg, opacity, isDark } = theme.mode;
@@ -25,10 +27,18 @@ const SearchBox = ({
             type="text"
             value={query}
             onChange={handleChange}
-            className="border rounded sm:w-full text-black"
+            className="border rounded-l sm:w-full text-black"
             style={{ background: bg, color: syntax }}
             placeholder="Search Game by Topic"
           />
+          <button
+            type="submit"
+            className="search-btn border rounded-r"
+            style={{ background: bg, color: syntax }}
+            onClick={refresh}
+          >
+            <HiIcons.HiRefresh />
+          </button>
         </form>
         <div className="mt-2">
           <MenuSelect
