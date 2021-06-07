@@ -13,7 +13,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [games, setGames] = useState(GAME_DATA);
-  const [filteredGames, setFilteredGames] = useState([]);
+  const [filteredGames, setFilteredGames] = useState(false);
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -134,7 +134,7 @@ const Home = () => {
           handleKeyStage2={handleKeyStage2}
           refresh={refresh}
         />
-        {isLoading ? (
+        {!filteredGames ? (
           [1, 2, 3, 4, 5].map((n) => (
             <SkeletonHeader key={n} theme={loaderTheme} />
           ))
