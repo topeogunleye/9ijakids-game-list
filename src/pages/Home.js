@@ -7,6 +7,7 @@ import { DarkModeContext } from '../contexts/DarkModeProvider';
 import { v4 as uuidv4 } from 'uuid';
 import SkeletonHeader from '../skeletons/SkeletonHeader';
 import logo from './logo.png';
+import * as FaIcons from 'react-icons/fa';
 
 const Home = () => {
   const [query, setQuery] = useState('');
@@ -83,7 +84,7 @@ const Home = () => {
   };
 
   const theme = useContext(DarkModeContext);
-  const { syntax, ui, isDark } = theme.mode;
+  const { syntax, ui, bg, isDark } = theme.mode;
   const loaderTheme = isDark ? 'dark' : 'light';
 
   return (
@@ -100,6 +101,20 @@ const Home = () => {
             className="cursor-pointer focus:outline-none"
             id="random"
           />
+        </div>
+        <div
+          className="absolute top-20 right-1 sm:right-5 lg:right-10
+        "
+        >
+          <a
+            href="https://github.com/topeogunleye/9ijakids-game-list"
+            target="blank"
+          >
+            <FaIcons.FaGithub
+              className="focus:outline-none my-auto rounded-full w-10 h-10 grid place-items-center ml-2.5"
+              style={{ background: bg, color: syntax }}
+            />
+          </a>
         </div>
         <img src={logo} alt="logo" className="w-10 sm:w-24 mt-2" />
         <h1 className="font-black text-2xl logo-signature mt-2">
