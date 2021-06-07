@@ -1,4 +1,4 @@
-## MealDB App
+## 9ijakids Game
 
 Game Catalogue App for kids to get see a list of games available. Game Catalogue includes Image,title and description for each game.
 
