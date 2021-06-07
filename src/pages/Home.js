@@ -81,7 +81,7 @@ const Home = () => {
       className="bg-gray-500 text-white min-h-screen flex flex-col items-center justify-center text-center mb-8"
       style={{ background: ui, color: syntax }}
     >
-      <div className="max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center justify-center text-center mb-8 min-h-screen">
+      <div className="max-w-md sm:max-w-lg md:max-w-5xl flex flex-col items-center  text-center mb-8 min-h-screen">
         <div
           className="absolute top-5 right-1 sm:right-5 lg:right-10
           "
@@ -92,7 +92,7 @@ const Home = () => {
           />
         </div>
 
-        <h1 className="font-black text-2xl logo-signature">
+        <h1 className="font-black text-2xl logo-signature mt-2">
           9ijakids Kids Game
         </h1>
 
