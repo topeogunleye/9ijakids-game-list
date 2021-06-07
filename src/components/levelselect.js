@@ -54,7 +54,7 @@ export default function LevelSelect({
                     <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm'
+                        'block px-8 py-2 text-sm'
                       )}
                     >
                       Key Stage 1
@@ -66,7 +66,7 @@ export default function LevelSelect({
                     <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm'
+                        'block px-8 py-2 text-sm'
                       )}
                     >
                       Key Stage 2
