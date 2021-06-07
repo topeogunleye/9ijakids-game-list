@@ -18,12 +18,12 @@ export default function LevelSelect({
   const { syntax, bg } = theme.mode;
 
   return (
-    <Menu as="div" className="relative inline-block text-left ml-2 z-10">
+    <Menu as="div" className="relative inline-block text-left z-10">
       {({ open }) => (
         <>
           <div>
             <Menu.Button
-              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 cursor-pointer"
+              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
               style={{ background: bg, color: syntax }}
             >
               Level
@@ -46,9 +46,9 @@ export default function LevelSelect({
           >
             <Menu.Items
               static
-              className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none max-w-max"
             >
-              <div className="py-1 cursor-pointer">
+              <div className="py-1">
                 <Menu.Item onClick={handleKeyStage1}>
                   {({ active }) => (
                     <button
@@ -85,6 +85,23 @@ export default function LevelSelect({
                     </button>
                   )}
                 </Menu.Item>
+                <form method="POST" action="#">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        type="submit"
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block w-full text-left px-4 py-2 text-sm'
+                        )}
+                      >
+                        Sign out
+                      </button>
+                    )}
+                  </Menu.Item>
+                </form>
               </div>
             </Menu.Items>
           </Transition>
