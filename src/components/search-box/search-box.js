@@ -36,6 +36,7 @@ const SearchBox = ({
             className="search-btn border rounded-r"
             style={{ background: bg, color: syntax }}
             onClick={refresh}
+            title="Click to Refresh Page"
             aria-label="Click to Refresh Page"
           >
             <HiIcons.HiRefresh />
