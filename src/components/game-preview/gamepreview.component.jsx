@@ -2,6 +2,7 @@ import { DarkModeContext } from '../../contexts/DarkModeProvider';
 import { useContext } from 'react';
 import './game-preview.css';
 import { v4 as uuidv4 } from 'uuid';
+import MoneyMatters from '../../assets/MoneyMatters.png';
 
 const GamePreview = ({ game }) => {
   const theme = useContext(DarkModeContext);

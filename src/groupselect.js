@@ -20,9 +20,9 @@ export default function GroupSelect({ handleAcademic, handleFinLit }) {
           <div>
             <Menu.Button
               className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 cursor-pointer"
+              style={{ background: bg, color: syntax }}
               title="Filter by Group"
               aria-label="Filter by Group"
-              style={{ background: bg, color: syntax }}
             >
               Group
               <ChevronDownIcon
@@ -52,7 +52,7 @@ export default function GroupSelect({ handleAcademic, handleFinLit }) {
                     <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-20 py-2 text-sm'
+                        'block px-4 py-2 text-sm'
                       )}
                     >
                       Academic
@@ -64,7 +64,7 @@ export default function GroupSelect({ handleAcademic, handleFinLit }) {
                     <button
                       className={classNames(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-14 py-2 text-sm'
+                        'block px-4 py-2 text-sm'
                       )}
                     >
                       Financial Literacy

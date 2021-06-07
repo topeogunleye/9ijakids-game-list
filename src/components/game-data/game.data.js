@@ -1,3 +1,11 @@
+import BeforeandAfter from '../../assets/BeforeandAfter.png'; // with import
+import Communication from '../../assets/Communication.png';
+import ExploringLife from '../../assets/ExploringLife.png';
+import Kiddiepreneur101 from '../../assets/Kiddiepreneur101.png';
+import MathsmaniaCity from '../../assets/MathsmaniaCity-Decimal.png';
+import MathsPop from '../../assets/MathsPop.png';
+import MoneyMatters from '../../assets/MoneyMatters.png';
+
 const GAME_DATA = [
   {
     GameTitle: 'Before and After',
@@ -6,8 +14,7 @@ const GAME_DATA = [
     Group: 'Academic',
     Level: 'Key Stage 1',
     Subject: 'English',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Before and After',
+    GameImage: BeforeandAfter,
   },
   {
     GameTitle: 'Communication',
@@ -16,8 +23,7 @@ const GAME_DATA = [
     Group: 'Academic',
     Level: 'Key Stage 1',
     Subject: 'Social Studies',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Communication',
+    GameImage: Communication,
   },
   {
     GameTitle: 'Kiddiepreneur 101',
@@ -26,8 +32,7 @@ const GAME_DATA = [
     Group: 'Financial Literacy',
     Level: 'Financial Literacy',
     Subject: 'Financial Literacy',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Kiddiepreneur 101',
+    GameImage: Kiddiepreneur101,
   },
   {
     GameTitle: 'Money Matters',
@@ -36,8 +41,7 @@ const GAME_DATA = [
     Group: 'Financial Literacy',
     Level: 'Financial Literacy',
     Subject: 'Financial Literacy',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Money Matters',
+    GameImage: MoneyMatters,
   },
   {
     GameTitle: 'Maths Pop',
@@ -47,8 +51,7 @@ const GAME_DATA = [
     Group: 'Academic',
     Level: 'Key Stage 1',
     Subject: 'Mathematics',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Maths Pop',
+    GameImage: MoneyMatters,
   },
   {
     GameTitle: 'Exploring Life',
@@ -57,8 +60,7 @@ const GAME_DATA = [
     Group: 'Academic',
     Level: 'Key Stage 1',
     Subject: 'Science',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Exploring Life',
+    GameImage: ExploringLife,
   },
   {
     GameTitle: 'Mathsmania City - Decimals',
@@ -67,8 +69,7 @@ const GAME_DATA = [
     Group: 'Academic',
     Level: 'Key Stage 2',
     Subject: 'Mathematics',
-    GameImage:
-      'https://partners.9ijakids.com/index.php/thumbnail?game=Mathsmania City - Decimals',
+    GameImage: MathsmaniaCity,
   },
 ];
 

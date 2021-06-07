@@ -1,13 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import SearchBox from '../components/search-box/search-box';
-import GAME_DATA from '../components/game.data';
+import GAME_DATA from '../components/game-data/game.data';
 import GamePreview from '../components/game-preview/gamepreview.component';
 import ThemeToggle from '../components/theme-toggle/ThemeToggle';
 import { DarkModeContext } from '../contexts/DarkModeProvider';
 import { v4 as uuidv4 } from 'uuid';
+import SkeletonHeader from '../skeletons/SkeletonHeader';
+import logo from './logo.png';
 
 const Home = () => {
   const [query, setQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const [games, setGames] = useState(GAME_DATA);
   const [filteredGames, setFilteredGames] = useState([]);
@@ -17,64 +20,87 @@ const Home = () => {
   };
 
   const refresh = () => {
+    setIsLoading(true);
     // it re-renders the component
     setFilteredGames(GAME_DATA);
+    setIsLoading(false);
   };
 
   useEffect(() => {
-    setFilteredGames(
-      games.filter((game) =>
-        game.Topic.toLowerCase().includes(query.toLowerCase())
-      )
-    );
+    setIsLoading(true);
+    setTimeout(async () => {
+      setFilteredGames(
+        games.filter((game) =>
+          game.Topic.toLowerCase().includes(query.toLowerCase())
+        )
+      );
+    }, 5000);
+    setIsLoading(false);
   }, [games, query]);
 
   const handleAcademic = () => {
+    setIsLoading(true);
+
     console.log('Academic');
     setFilteredGames(
       games.filter((game) => game.Group.toLowerCase().includes('academic'))
     );
+    setIsLoading(false);
+
     console.log(filteredGames);
   };
 
   const handleFinLit = () => {
+    setIsLoading(true);
+
     console.log('FinLit');
     setFilteredGames(
       games.filter((game) =>
         game.Group.toLowerCase().includes('financial literacy')
       )
     );
+    setIsLoading(false);
+
     console.log(filteredGames);
   };
 
   const handleFinLevel = () => {
+    setIsLoading(true);
+
     console.log('FinLev');
     setFilteredGames(
       games.filter((game) =>
         game.Level.toLowerCase().includes('financial literacy')
       )
     );
+    setIsLoading(false);
+
     console.log(filteredGames);
   };
 
   const handleKeyStage1 = () => {
+    setIsLoading(true);
     console.log('KeyStage1');
     setFilteredGames(
       games.filter((game) => game.Level.toLowerCase().includes('key stage 1'))
     );
+    setIsLoading(false);
     console.log(filteredGames);
   };
 
   const handleKeyStage2 = () => {
+    setIsLoading(true);
     console.log('KeyStage2');
     setFilteredGames(
       games.filter((game) => game.Level.toLowerCase().includes('key stage 2'))
     );
+    setIsLoading(false);
     console.log(filteredGames);
   };
 
   const theme = useContext(DarkModeContext);
-  const { syntax, ui } = theme.mode;
+  const { syntax, ui, isDark } = theme.mode;
+  const loaderTheme = isDark ? 'dark' : 'light';
 
   return (
     <div
@@ -91,7 +117,7 @@ const Home = () => {
             id="random"
           />
         </div>
-
+        <img src={logo} alt="logo" className="w-10 sm:w-24 mt-2" />
         <h1 className="font-black text-2xl logo-signature mt-2">
           9ijakids Kids Game
         </h1>
@@ -108,12 +134,18 @@ const Home = () => {
           handleKeyStage2={handleKeyStage2}
           refresh={refresh}
         />
-
-        <div id="meals" className="meals">
-          {filteredGames.map((game) => (
-            <GamePreview game={game} key={uuidv4()} />
-          ))}
-        </div>
+        {isLoading ? (
+          [1, 2, 3, 4, 5].map((n) => (
+            <SkeletonHeader key={n} theme={loaderTheme} />
+          ))
+        ) : (
+          <div id="meals" className="meals">
+            {filteredGames &&
+              filteredGames.map((game) => (
+                <GamePreview game={game} key={uuidv4()} />
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

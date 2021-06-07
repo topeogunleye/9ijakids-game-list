@@ -1,0 +1,210 @@
+/* basic styles */
+.skeleton {
+  background: #ddd;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.skeleton.title {
+  width: 50%;
+  height: 24px;
+  margin-bottom: 15px;
+}
+
+.imageBig {
+  width: 240px;
+  height: 240px;
+}
+
+.imageMealInfo {
+  width: 100vw;
+  height: 65vh;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.mealInfo {
+  width: 176px;
+  height: 24px;
+}
+
+.textBig {
+  width: 240px;
+  height: 1152px;
+}
+
+.liText {
+  width: 100px;
+  height: 16px;
+  margin: 4px 15px;
+}
+
+.imageSmall {
+  width: 240px;
+  height: 240px;
+}
+
+@media screen and (min-width: 1080px) {
+  .imageMealInfo {
+    max-width: 320px;
+    max-height: 320px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .imageSmall {
+    width: 208px;
+    height: 224px;
+  }
+
+  .title {
+    width: 50%;
+    height: 24px;
+  }
+
+  .imageBig {
+    min-width: 100vw;
+    min-height: 320px;
+  }
+
+  .imageMealInfo {
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 8rem;
+  }
+
+  .mealInfo {
+    width: 512px;
+    height: 24px;
+  }
+
+  .textBig {
+    width: 576px;
+    height: 456px;
+  }
+
+  .liText {
+    width: 100px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 475px) {
+  .imageSmall {
+    width: 208px;
+    height: 212px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .imageBig {
+    width: 312px;
+    height: 312px;
+  }
+
+  .textBig {
+    width: 318.75px;
+    height: 840px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .imageBig {
+    width: 281.25px;
+    height: 281.25px;
+  }
+
+  .textBig {
+    width: 281.25px;
+    height: 960px;
+  }
+}
+/* skeleton profile */
+.skeleton-wrapper {
+  /* margin: 20px auto; */
+  padding: 10px 15px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.wrapper {
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Category */
+.catImg {
+  width: 177px;
+  height: 110px;
+}
+
+.catName {
+  width: 75px;
+  height: 28px;
+}
+
+/* themes */
+.light {
+  background: #f2f2f2;
+}
+
+.dark {
+  background: #444;
+}
+
+.dark .skeleton {
+  background: #777;
+}
+
+/* animation effects */
+.shimmer-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: loading 2.5s infinite;
+}
+
+.shimmer {
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.05);
+}
+
+.dark .shimmer {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-150%);
+  }
+  50% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+/* Meal Info */
+
+.Ingredients,
+.Minutes,
+.Calories {
+  @apply border-r mx-2.5 w-20 h-10 md:mx-auto sm:w-24 sm:h-12;
+}
+
+.Ing-title {
+  @apply w-24 h-4 mt-6 ml-8 text-center mx-auto md:text-justify;
+}
+
+.li-el {
+  @apply w-12 h-4 sm:w-20 md:h-7;
+}
+
+.Meal-Info-p {
+  @apply w-9/12 h-56 sm:h-72 mx-auto;
+}
