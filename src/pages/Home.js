@@ -10,7 +10,6 @@ import logo from './logo.png';
 
 const Home = () => {
   const [query, setQuery] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
 
   const [games, setGames] = useState(GAME_DATA);
   const [filteredGames, setFilteredGames] = useState(false);
@@ -20,82 +19,67 @@ const Home = () => {
   };
 
   const refresh = () => {
-    setIsLoading(true);
     // it re-renders the component
     setFilteredGames(GAME_DATA);
-    setIsLoading(false);
   };
 
   useEffect(() => {
-    setIsLoading(true);
     setTimeout(async () => {
       setFilteredGames(
         games.filter((game) =>
           game.Topic.toLowerCase().includes(query.toLowerCase())
         )
       );
-    }, 5000);
-    setIsLoading(false);
+    }, 2500);
   }, [games, query]);
 
   const handleAcademic = () => {
-    setIsLoading(true);
-
-    console.log('Academic');
-    setFilteredGames(
-      games.filter((game) => game.Group.toLowerCase().includes('academic'))
-    );
-    setIsLoading(false);
-
-    console.log(filteredGames);
+    setFilteredGames(false);
+    setTimeout(async () => {
+      setFilteredGames(
+        games.filter((game) => game.Group.toLowerCase().includes('academic'))
+      );
+    }, 2500);
   };
 
   const handleFinLit = () => {
-    setIsLoading(true);
-
-    console.log('FinLit');
-    setFilteredGames(
-      games.filter((game) =>
-        game.Group.toLowerCase().includes('financial literacy')
-      )
-    );
-    setIsLoading(false);
-
-    console.log(filteredGames);
+    setFilteredGames(false);
+    setTimeout(async () => {
+      setFilteredGames(
+        games.filter((game) =>
+          game.Group.toLowerCase().includes('financial literacy')
+        )
+      );
+    }, 2500);
   };
 
   const handleFinLevel = () => {
-    setIsLoading(true);
-
-    console.log('FinLev');
-    setFilteredGames(
-      games.filter((game) =>
-        game.Level.toLowerCase().includes('financial literacy')
-      )
-    );
-    setIsLoading(false);
-
-    console.log(filteredGames);
+    setFilteredGames(false);
+    setTimeout(async () => {
+      setFilteredGames(
+        games.filter((game) =>
+          game.Level.toLowerCase().includes('financial literacy')
+        )
+      );
+    }, 2500);
   };
 
   const handleKeyStage1 = () => {
-    setIsLoading(true);
-    console.log('KeyStage1');
-    setFilteredGames(
-      games.filter((game) => game.Level.toLowerCase().includes('key stage 1'))
-    );
-    setIsLoading(false);
-    console.log(filteredGames);
+    setFilteredGames(false);
+    setTimeout(async () => {
+      setFilteredGames(
+        games.filter((game) => game.Level.toLowerCase().includes('key stage 1'))
+      );
+    }, 2500);
   };
 
   const handleKeyStage2 = () => {
-    setIsLoading(true);
-    console.log('KeyStage2');
-    setFilteredGames(
-      games.filter((game) => game.Level.toLowerCase().includes('key stage 2'))
-    );
-    setIsLoading(false);
-    console.log(filteredGames);
+    setFilteredGames(false);
+    setTimeout(async () => {
+      setFilteredGames(
+        games.filter((game) => game.Level.toLowerCase().includes('key stage 2'))
+      );
+    }, 2500);
   };
 
   const theme = useContext(DarkModeContext);
