@@ -1,6 +1,6 @@
 ## MealDB App
 
-Meal Finder App for users to get Meal Recipes Recommendation, Recipe Instructions and Ingredients, or Get random recipes.
+Game Catalogue App for kids to get see a list of games available. Game Catalogue includes Image,title and description for each game.
 
 ## Project Specifications
 
