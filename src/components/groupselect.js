@@ -14,7 +14,7 @@ export default function GroupSelect({ handleAcademic, handleFinLit }) {
   const { syntax, bg } = theme.mode;
 
   return (
-    <Menu as="div" className="relative inline-block text-left ml-2 z-10">
+    <Menu as="div" className="relative inline-block text-left z-10">
       {({ open }) => (
         <>
           <div>

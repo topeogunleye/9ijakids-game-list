@@ -18,7 +18,7 @@ export default function LevelSelect({
   const { syntax, bg } = theme.mode;
 
   return (
-    <Menu as="div" className="relative inline-block text-left z-10">
+    <Menu as="div" className="relative inline-block text-left z-10 ml-2">
       {({ open }) => (
         <>
           <div>
