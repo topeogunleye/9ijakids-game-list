@@ -8,6 +8,7 @@ import * as HiIcons from 'react-icons/hi';
 
 const SearchBox = ({
   query,
+  handleSubmit,
   handleChange,
   handleAcademic,
   handleFinLit,
@@ -27,7 +28,7 @@ const SearchBox = ({
           event.preventDefault();
         }}
       >
-        <form className="flex">
+        <form className="flex" onSubmit={handleSubmit}>
           <input
             type="text"
             value={query}

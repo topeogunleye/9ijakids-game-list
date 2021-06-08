@@ -19,6 +19,10 @@ const Home = () => {
     setQuery(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   const refresh = () => {
     // it re-renders the component
     setFilteredGames(GAME_DATA);
@@ -125,6 +129,7 @@ const Home = () => {
 
         <SearchBox
           query={query}
+          handleSubmit={handleSubmit}
           handleChange={handleChange}
           Group={filteredGames.Group}
           Level={filteredGames.Level}
