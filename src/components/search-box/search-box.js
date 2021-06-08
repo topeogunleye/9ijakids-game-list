@@ -21,7 +21,12 @@ const SearchBox = ({
 
   return (
     <div className="flex flex-row items-center">
-      <div className="flex-col mt-2 sm:flex-row">
+      <div
+        className="flex-col mt-2 sm:flex-row"
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
         <form className="flex">
           <input
             type="text"
