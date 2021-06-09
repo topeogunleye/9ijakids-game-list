@@ -109,7 +109,7 @@ const Home = () => {
           />
         </div>
         <div
-          className="absolute top-20 right-1 sm:right-5 lg:right-10
+          className="absolute top-36 sm:top-20 right-1 sm:right-5 lg:right-10
         "
           title="Check Code on GitHub"
           aria-label="Check Code on GitHub"
