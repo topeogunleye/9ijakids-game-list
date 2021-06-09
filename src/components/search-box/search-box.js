@@ -28,18 +28,27 @@ const SearchBox = ({
           event.preventDefault();
         }}
       >
-        <form className="flex" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={query}
-            onChange={handleChange}
-            className="border rounded-l sm:w-full text-black"
-            style={{ background: bg, color: syntax }}
-            placeholder="Search Game by Topic"
-          />
+        <div className="flex mt-2">
+          <form className="flex" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={query}
+              onChange={handleChange}
+              className="border rounded-l sm:w-full text-black"
+              style={{ background: bg, color: syntax }}
+              placeholder="Search Game by Topic"
+            />
+            <button
+              className="search-btn border rounded-r"
+              type="submit"
+              style={{ background: bg, color: syntax }}
+            >
+              <FaIcons.FaSearch className="h-5 w-5" />
+            </button>
+          </form>
           <button
             type="submit"
-            className="search-btn border rounded-r"
+            className="search-btn border rounded-r ml-2.5"
             style={{ background: bg, color: syntax }}
             onClick={refresh}
             title="Click to Refresh Page"
@@ -47,7 +56,7 @@ const SearchBox = ({
           >
             <HiIcons.HiRefresh />
           </button>
-        </form>
+        </div>
         <div className="mt-2">
           <MenuSelect
             handleAcademic={handleAcademic}

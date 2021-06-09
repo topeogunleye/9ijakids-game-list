@@ -20,6 +20,8 @@ const Home = () => {
   };
 
   const handleSubmit = (event) => {
+    // setQuery(event.target.value);
+
     event.preventDefault();
   };
 
